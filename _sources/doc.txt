@@ -2,4 +2,4 @@
 Links to Documenation
 ==================================
 
-* `Development <http://llvmpy.org/llvmpy-doc/dev/index.html>'_
+* `Development <http://llvmpy.org/llvmpy-doc/dev/index.html>`_
