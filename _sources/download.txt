@@ -2,6 +2,6 @@
 Downloads
 =============
 
-Version 0.8.2 at `PyPi <http://pypi.python.org/pypi/llvmpy/0.8.2>`_
-Version 0.9 coming soon...
+* Version 0.8.2 at `PyPi <http://pypi.python.org/pypi/llvmpy/0.8.2>`_
+* Version 0.9 at `PyPI <http://pypi.python.org/pypi/llvmpy/0.9>`_ 
 
