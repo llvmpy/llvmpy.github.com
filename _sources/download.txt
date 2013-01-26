@@ -2,6 +2,7 @@
 Downloads
 =============
 
+* Version `0.10.1 <http://pypi.python.org/pypi/llvmpy/0.10.1>`_ at PyPI
 * Version `0.9 <http://pypi.python.org/pypi/llvmpy/0.9>`_ at PyPI
 * Version `0.8.2 <http://pypi.python.org/pypi/llvmpy/0.8.2>`_ at PyPI
 
