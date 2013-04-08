@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
-        VERSION:     '0.8.2',
+        VERSION:     '0.11.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -87,12 +87,12 @@
 <h3>Versions</h3>
 
 <div class="tile"><h4>Stable</h4>
-     0.10.2 &ndash; January&nbsp;2013<br/>
+     0.11.0 &ndash; March&nbsp;2013<br/>
     <a href="download.html">Download</a>
 </div>
 
 <div class="tile"><h4>Development</h4>
-    pre-0.11<br/>
+    pre-1.0<br/>
     <a href="https://github.com/llvmpy/llvmpy">Github</a>
 </div>
 
@@ -158,24 +158,40 @@ CLANG or dragonegg</li>
 </ul>
 <div class="section" id="quickstart">
 <h1>QuickStart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
-<p>Get at least version 3.1 of LLVM, build it. Make sure &#8216;&#8211;enable-pic&#8217; is passed
-to LLVM&#8217;s &#8216;configure&#8217; command (also ensure you build the correct
-version for your version of Python (32-bit or 64-bit).   Here is an
-example.</p>
-<div class="highlight-bash"><div class="highlight"><pre>wget http://llvm.org/releases/3.1/llvm-3.1.src.tar.gz
-tar zxvf llvm-3.1.src.tar.gz
-<span class="nb">cd </span>llvm
-./configure --enable-pic --mar
-make
-sudo make install
-</pre></div>
+<ol class="arabic">
+<li><p class="first">Get and extract LLVM 3.2 source tarball from
+<a class="reference external" href="http://llvm.org/releases/download.html#3.2">llvm.org</a>.  Then, <tt class="docutils literal"><span class="pre">cd</span></tt> into
+the extracted directory.</p>
+</li>
+<li><p class="first">Run <tt class="docutils literal"><span class="pre">./configure</span> <span class="pre">--enable-optimized</span> <span class="pre">--prefix=LLVM_INSTALL_PATH</span></tt>.</p>
+<blockquote>
+<div><p><strong>Note</strong>: Without the <tt class="docutils literal"><span class="pre">--enable-optimized</span></tt> flag, debug build will be
+selected.  Unless you are developing LLVM or llvmpy, it is recommended
+that the flag is used to reduce build time and binary size.</p>
+<p><strong>Note</strong>: Use prefix to select the installation path.  It is recommended
+to separate your custom build from the default system package.  Please
+replace <tt class="docutils literal"><span class="pre">LLVM_INSTALL_PATH</span></tt> with your own path.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Run <tt class="docutils literal"><span class="pre">REQUIRES_RTTI=1</span> <span class="pre">make</span></tt> to build.</p>
+<blockquote>
+<div><p><strong>Note</strong>: With LLVM 3.2, the default build configuration has C++ RTTI
+disabled.  However, llvmpy requires RTTI.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Get llvm-py and install it:</p>
+<div class="highlight-python"><pre>$ git clone git@github.com:llvmpy/llvmpy.git
+$ cd llvmpy
+$ LLVM_CONFIG_PATH=LLVM_INSTALL_PATH/bin/llvm-config python setup.py install</pre>
 </div>
-<p>Get llvm-py and install it...</p>
-<div class="highlight-bash"><div class="highlight"><pre>git clone https://github.com/llvmpy/llvmpy.git
-<span class="nb">cd </span>llvmpy
-python setup.py install
-</pre></div>
+<p>Run the tests:</p>
+<div class="highlight-python"><pre>$ python -c "import llvm; llvm.test()"</pre>
 </div>
+</li>
+<li><p class="first">See documentation at &#8216;<a class="reference external" href="http://www.llvmpy.org">http://www.llvmpy.org</a>&#8216; and examples
+under &#8216;test&#8217;.</p>
+</li>
+</ol>
 <p>This project is maintained by <a class="reference external" href="http://www.continuum.io">Continuum Analytics</a></p>
 <div class="toctree-wrapper compound">
 </div>

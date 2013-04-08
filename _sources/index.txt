@@ -10,27 +10,37 @@ used for a lot of things, but here are some ideas:
 QuickStart
 ==========
 
-Get at least version 3.1 of LLVM, build it. Make sure '--enable-pic' is passed
-to LLVM's 'configure' command (also ensure you build the correct
-version for your version of Python (32-bit or 64-bit).   Here is an
-example.
+1. Get and extract LLVM 3.2 source tarball from
+   `llvm.org <http://llvm.org/releases/download.html#3.2>`_.  Then, ``cd`` into
+   the extracted directory.
 
-.. code-block:: bash
+2. Run ``./configure --enable-optimized --prefix=LLVM_INSTALL_PATH``.
 
-   wget http://llvm.org/releases/3.1/llvm-3.1.src.tar.gz
-   tar zxvf llvm-3.1.src.tar.gz
-   cd llvm
-   ./configure --enable-pic --mar
-   make
-   sudo make install
+    **Note**: Without the ``--enable-optimized`` flag, debug build will be
+    selected.  Unless you are developing LLVM or llvmpy, it is recommended
+    that the flag is used to reduce build time and binary size.
+    
+    **Note**: Use prefix to select the installation path.  It is recommended
+    to separate your custom build from the default system package.  Please
+    replace ``LLVM_INSTALL_PATH`` with your own path.
 
-Get llvm-py and install it...
+3. Run ``REQUIRES_RTTI=1 make`` to build.
 
-.. code-block:: bash
+    **Note**: With LLVM 3.2, the default build configuration has C++ RTTI 
+    disabled.  However, llvmpy requires RTTI.
 
-   git clone https://github.com/llvmpy/llvmpy.git
-   cd llvmpy
-   python setup.py install
+4. Get llvm-py and install it::
+
+    $ git clone git@github.com:llvmpy/llvmpy.git
+    $ cd llvmpy
+    $ LLVM_CONFIG_PATH=LLVM_INSTALL_PATH/bin/llvm-config python setup.py install
+
+   Run the tests::
+
+    $ python -c "import llvm; llvm.test()"
+
+5. See documentation at 'http://www.llvmpy.org' and examples
+   under 'test'.
 
 This project is maintained by `Continuum Analytics <http://www.continuum.io>`_
 
