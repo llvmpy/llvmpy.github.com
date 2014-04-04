@@ -10,8 +10,8 @@ used for a lot of things, but here are some ideas:
 QuickStart
 ==========
 
-1. Get and extract LLVM 3.2 source tarball from
-   `llvm.org <http://llvm.org/releases/download.html#3.2>`_.  Then, ``cd`` into
+1. Get and extract LLVM 3.3 (or LLVM 3.2) source tarball from
+   `llvm.org <http://llvm.org/releases/download.html#3.3>`_.  Then, ``cd`` into
    the extracted directory.
 
 2. Run ``./configure --enable-optimized --prefix=LLVM_INSTALL_PATH``.
@@ -26,7 +26,7 @@ QuickStart
 
 3. Run ``REQUIRES_RTTI=1 make`` to build.
 
-    **Note**: With LLVM 3.2, the default build configuration has C++ RTTI 
+    **Note**: With LLVM 3.2+, the default build configuration has C++ RTTI
     disabled.  However, llvmpy requires RTTI.
 
 4. Get llvm-py and install it::
