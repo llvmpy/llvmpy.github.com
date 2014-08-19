@@ -31,7 +31,7 @@ QuickStart
 
 4. Get llvm-py and install it::
 
-    $ git clone git@github.com:llvmpy/llvmpy.git
+    $ git clone https://github.com/llvmpy/llvmpy.git
     $ cd llvmpy
     $ LLVM_CONFIG_PATH=LLVM_INSTALL_PATH/bin/llvm-config python setup.py install
 
