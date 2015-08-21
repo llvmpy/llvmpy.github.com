@@ -1,3 +1,5 @@
+.. warning:: This project has been deprecated and is no longer being actively developed.  We strongly suggest migrating to `llvmlite <http://llvmlite.pydata.org/>`_.
+
 llvmpy is a Python wrapper around the `llvm <http://www.llvm.org>`_
 C++ library which allows simple access to compiler tools.   It can be
 used for a lot of things, but here are some ideas: 
@@ -42,7 +44,6 @@ QuickStart
 5. See documentation at 'http://www.llvmpy.org' and examples
    under 'test'.
 
-This project is maintained by `Continuum Analytics <http://www.continuum.io>`_
 
 .. toctree::
    :hidden:

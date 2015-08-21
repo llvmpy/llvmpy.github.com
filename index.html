@@ -35,11 +35,6 @@
             <img class="logo" src="_static/logo.png" alt="Logo"/>
           </a>
 
-           <a href="http://continuum.io" >
-                <img src="_static/continuum_sponsor.png"
-                     style="margin: 10px; position: absolute; right: 0"
-                     alt="Sponsored By Continuum Analytics, Inc" />
-            </a>
           </div>
        
         <div class="rel">
@@ -153,7 +148,11 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <p>llvmpy is a Python wrapper around the <a class="reference external" href="http://www.llvm.org">llvm</a>
+  <div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This project has been deprecated and is no longer being actively developed.  We strongly suggest migrating to <a class="reference external" href="http://llvmlite.pydata.org/">llvmlite</a>.</p>
+</div>
+<p>llvmpy is a Python wrapper around the <a class="reference external" href="http://www.llvm.org">llvm</a>
 C++ library which allows simple access to compiler tools.   It can be
 used for a lot of things, but here are some ideas:</p>
 <ul class="simple">
@@ -186,19 +185,20 @@ disabled.  However, llvmpy requires RTTI.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Get llvm-py and install it:</p>
-<div class="highlight-python"><pre>$ git clone https://github.com/llvmpy/llvmpy.git
+<div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/llvmpy/llvmpy.git
 $ cd llvmpy
-$ LLVM_CONFIG_PATH=LLVM_INSTALL_PATH/bin/llvm-config python setup.py install</pre>
+$ LLVM_CONFIG_PATH=LLVM_INSTALL_PATH/bin/llvm-config python setup.py install
+</pre></div>
 </div>
 <p>Run the tests:</p>
-<div class="highlight-python"><pre>$ python -c "import llvm; llvm.test()"</pre>
+<div class="highlight-python"><div class="highlight"><pre>$ python -c &quot;import llvm; llvm.test()&quot;
+</pre></div>
 </div>
 </li>
 <li><p class="first">See documentation at &#8216;<a class="reference external" href="http://www.llvmpy.org">http://www.llvmpy.org</a>&#8216; and examples
 under &#8216;test&#8217;.</p>
 </li>
 </ol>
-<p>This project is maintained by <a class="reference external" href="http://www.continuum.io">Continuum Analytics</a></p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -216,7 +216,7 @@ under &#8216;test&#8217;.</p>
       
     <div class="footer">
         &copy; Copyright Mahadevan R (2008-2010), Continuum Analytics (2012).
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
     </div>
     </div>
 
