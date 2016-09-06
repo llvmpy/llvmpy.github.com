@@ -24,11 +24,11 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="llvmpy" href="#" />
     <link rel="next" title="Links to Documenation" href="doc.html" /> 
   </head>
-  <body>
+  <body role="document">
     <div class="header-wrapper">
       <div class="header">
           <div class="logo"><a href="#">
@@ -49,7 +49,7 @@
       <div class="content">
              
             
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper"> 
 <div class="sidebarblock">
     <div id="cse-search-form" style="width: 100%;">Loading</div>
@@ -146,11 +146,11 @@
             
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">This project has been deprecated and is no longer being actively developed.  We strongly suggest migrating to <a class="reference external" href="http://llvmlite.pydata.org/">llvmlite</a>.</p>
+<p class="last">This project has been <strong>deprecated</strong> and is no longer being actively developed.  We strongly suggest migrating to <a class="reference external" href="http://llvmlite.pydata.org/">llvmlite</a>.</p>
 </div>
 <p>llvmpy is a Python wrapper around the <a class="reference external" href="http://www.llvm.org">llvm</a>
 C++ library which allows simple access to compiler tools.   It can be
@@ -165,33 +165,33 @@ CLANG or dragonegg</li>
 <h1>QuickStart<a class="headerlink" href="#quickstart" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic">
 <li><p class="first">Get and extract LLVM 3.3 (or LLVM 3.2) source tarball from
-<a class="reference external" href="http://llvm.org/releases/download.html#3.3">llvm.org</a>.  Then, <tt class="docutils literal"><span class="pre">cd</span></tt> into
+<a class="reference external" href="http://llvm.org/releases/download.html#3.3">llvm.org</a>.  Then, <code class="docutils literal"><span class="pre">cd</span></code> into
 the extracted directory.</p>
 </li>
-<li><p class="first">Run <tt class="docutils literal"><span class="pre">./configure</span> <span class="pre">--enable-optimized</span> <span class="pre">--prefix=LLVM_INSTALL_PATH</span></tt>.</p>
+<li><p class="first">Run <code class="docutils literal"><span class="pre">./configure</span> <span class="pre">--enable-optimized</span> <span class="pre">--prefix=LLVM_INSTALL_PATH</span></code>.</p>
 <blockquote>
-<div><p><strong>Note</strong>: Without the <tt class="docutils literal"><span class="pre">--enable-optimized</span></tt> flag, debug build will be
+<div><p><strong>Note</strong>: Without the <code class="docutils literal"><span class="pre">--enable-optimized</span></code> flag, debug build will be
 selected.  Unless you are developing LLVM or llvmpy, it is recommended
 that the flag is used to reduce build time and binary size.</p>
 <p><strong>Note</strong>: Use prefix to select the installation path.  It is recommended
 to separate your custom build from the default system package.  Please
-replace <tt class="docutils literal"><span class="pre">LLVM_INSTALL_PATH</span></tt> with your own path.</p>
+replace <code class="docutils literal"><span class="pre">LLVM_INSTALL_PATH</span></code> with your own path.</p>
 </div></blockquote>
 </li>
-<li><p class="first">Run <tt class="docutils literal"><span class="pre">REQUIRES_RTTI=1</span> <span class="pre">make</span></tt> to build.</p>
+<li><p class="first">Run <code class="docutils literal"><span class="pre">REQUIRES_RTTI=1</span> <span class="pre">make</span></code> to build.</p>
 <blockquote>
 <div><p><strong>Note</strong>: With LLVM 3.2+, the default build configuration has C++ RTTI
 disabled.  However, llvmpy requires RTTI.</p>
 </div></blockquote>
 </li>
 <li><p class="first">Get llvm-py and install it:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ git clone https://github.com/llvmpy/llvmpy.git
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ git clone https://github.com/llvmpy/llvmpy.git
 $ cd llvmpy
 $ LLVM_CONFIG_PATH=LLVM_INSTALL_PATH/bin/llvm-config python setup.py install
 </pre></div>
 </div>
 <p>Run the tests:</p>
-<div class="highlight-python"><div class="highlight"><pre>$ python -c &quot;import llvm; llvm.test()&quot;
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ python -c &quot;import llvm; llvm.test()&quot;
 </pre></div>
 </div>
 </li>
@@ -214,9 +214,9 @@ under &#8216;test&#8217;.</p>
 
     <div class="footer-wrapper">
       
-    <div class="footer">
+    <div class="footer" role="contentinfo">
         &copy; Copyright Mahadevan R (2008-2010), Continuum Analytics (2012).
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.1.
     </div>
     </div>
 
